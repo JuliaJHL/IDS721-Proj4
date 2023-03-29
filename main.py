@@ -1,18 +1,16 @@
-"""
-Main cli or app entry point
-"""
+import json
+import boto3
 
-from mylib.calculator import add
-import click
-
-
-@click.command("add")
-@click.argument("a", type=int)
-@click.argument("b", type=int)
-def add_cli(a, b):
-    click.echo(add(a, b))
-
-
-if __name__ == "__main__":
-    # pylint: disable=no-value-for-parameter
-    add_cli()
+def lambda_handler(event, context):
+    """Uses AWS Comprehend to Create Sentiments on a DataFrame"""
+    comprehend = boto3.client(service_name="comprehend")
+    text = event.get("text",None)
+    payload = comprehend.detect_sentiment(Text=text, LanguageCode="en")
+    sentiment = payload["Sentiment"]
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Sentiment from Lambda!'),
+        'text':text,
+        'sentiment': sentiment
+    }
