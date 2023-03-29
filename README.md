@@ -1,4 +1,3 @@
-[![CI](https://github.com/JuliaJHL/Huilin-IDS721-Proj4/actions/workflows/cicd.yml/badge.svg)](https://github.com/JuliaJHL/Huilin-IDS721-Proj4/actions/workflows/cicd.yml)
 # Project 4: Serverless Data Engineering Pipeline
 In this project, we need to build a serverless data engineering pipeline
 
