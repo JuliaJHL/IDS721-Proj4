@@ -58,7 +58,7 @@ In this week, I reproduced the architecture of the example serverless data engin
 * Modify the execution role.
 * Add an EventBridge (CloudWatch Events) trigger, set the rate as 1 minute.
   ![producer](https://github.com/JuliaJHL/imgs_readme/blob/main/ids721proj4/producer.png)
-* Check messages of DynamoDB table `fang` to see the results.
+* Check messages of the queue to see the results.
   ![message](https://github.com/JuliaJHL/imgs_readme/blob/main/ids721proj4/message.png)
   ![info](https://github.com/JuliaJHL/imgs_readme/blob/main/ids721proj4/info.png)
 
